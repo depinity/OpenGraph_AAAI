@@ -18,9 +18,10 @@ const SUI_CONTRACT = {
 };
 
 // Model parameters
-const MODEL_ID = "0x872dc36048bedd901a56356d269c993e1b34afbb4fbd857412f79d0f9ea02657";
+const MODEL_ID = "0x0031be609664c7a6fe150d7a68b0fb7f43b45cab56056bba19a49fc0d2764499";
 const LAYER_COUNT = 3;
 const LAYER_DIMENSIONS = [32, 16, 10]; // Example dimensions
+const BATCH_SIZE = 50; // Number of samples to process in each batch
 
 const GAS_BUDGET = 3_000_000_000; // 1 SUI
 
@@ -32,7 +33,7 @@ interface PredictionResult {
 
 interface MnistSample {
   index: number;
-  input: number[];
+  input: string[];  // Changed to string[] since input values are now strings
   label: number;
   offchain_predicted_label: number | null;
   onchain_predicted_label: number | null;
@@ -164,8 +165,6 @@ class ModelInference {
       const layerEvents = this.parseLayerPartialComputedEvents(events);
       const predictionEvent = this.parsePredictionCompletedEvent(events);
 
-      // console.log("Layer events:", layerEvents);
-      // console.log("Prediction event:", predictionEvent);
 
       if (!predictionEvent) {
         throw new Error("No prediction completion event found");
@@ -195,8 +194,19 @@ async function main() {
     const testDataPath = path.join(__dirname, '../../scripts/mnist_test_data.json');
     const testData: MnistSample[] = JSON.parse(fs.readFileSync(testDataPath, 'utf-8'));
 
-    // Process first 10 samples
-    const samplesToProcess = testData.slice(0, 10);
+    // Get unselected samples
+    const unselectedSamples = testData.filter(sample => !sample.selected);
+    console.log(`Total unselected samples: ${unselectedSamples.length}`);
+
+    if (unselectedSamples.length === 0) {
+      console.log("No unselected samples remaining. All samples have been processed.");
+      return;
+    }
+
+    // Process next batch of unselected samples
+    const samplesToProcess = unselectedSamples.slice(0, BATCH_SIZE);
+    console.log(`Processing batch of ${samplesToProcess.length} samples`);
+    
     let correctCount = 0;
 
     // Process each sample
@@ -205,10 +215,8 @@ async function main() {
 
       // Convert input values to magnitude
       const inputMagnitude = sample.input.map(v => {
-        const strValue = v.toString();
-        // Remove decimal point and convert to integer
-        // e.g., "0.55882353" -> 55882353
-        return parseInt(strValue.replace("0.", "").padEnd(8, "0"));
+        // Input values are already in string format with 8 decimal places
+        return parseInt(v.replace("0.", ""));
       });
       const inputSign = new Array(inputMagnitude.length).fill(0); // All positive
 
@@ -223,10 +231,11 @@ async function main() {
 
       const predictedClass = Number(result.argmaxIdx);
       
-      // Update onchain_predicted_label in the original data
+      // Update sample in the original data
       const sampleIndex = testData.findIndex(s => s.index === sample.index);
       if (sampleIndex !== -1) {
         testData[sampleIndex].onchain_predicted_label = predictedClass;
+        testData[sampleIndex].selected = true;  // Mark as selected
       }
 
       console.log("Prediction result:");
@@ -241,10 +250,14 @@ async function main() {
       }
     }
 
-    // Print final accuracy statistics for processed samples
-    console.log("\n=== Final Results ===");
+    // Print batch accuracy statistics
+    console.log("\n=== Batch Results ===");
     console.log(`Correct predictions: ${correctCount}/${samplesToProcess.length}`);
-    console.log(`Accuracy: ${((correctCount / samplesToProcess.length) * 100).toFixed(2)}%`);
+    console.log(`Batch accuracy: ${((correctCount / samplesToProcess.length) * 100).toFixed(2)}%`);
+
+    // Calculate overall progress
+    const totalProcessed = testData.filter(sample => sample.selected).length;
+    console.log(`\nOverall progress: ${totalProcessed}/${testData.length} samples processed`);
 
     // Save updated data back to JSON file
     fs.writeFileSync(testDataPath, JSON.stringify(testData, null, 2));

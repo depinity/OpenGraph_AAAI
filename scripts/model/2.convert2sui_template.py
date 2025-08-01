@@ -106,7 +106,7 @@ def get_layer_type(layer):
     
     return layer_type_mapping.get(layer_class_name, layer_class_name)
 
-def convert_model_to_schema(model, scale=2):
+def convert_model_to_schema(model, scale = 2):
     """Convert Keras model to Model schema format"""
     layerNames = []
     activationNames = []

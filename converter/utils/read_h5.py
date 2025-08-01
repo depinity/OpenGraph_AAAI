@@ -13,7 +13,7 @@ def float_to_fixed(x, scale):
     abs_val = int(round(x * factor))  # Round to nearest integer
     return sign_bit, abs_val
 
-def convert_model_to_schema(model, scale=7):
+def convert_model_to_schema(model, scale=2):
     """Convert Keras model to Model schema format"""
     layer_dimensions = []
     weights_magnitudes = []
