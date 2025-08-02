@@ -22,7 +22,7 @@ import { LayerFlowVisualization } from "./LayerFlowVisualization";
 import { useTheme } from "@/shared/ui/design-system";
 
 // Constants for vector conversion
-const DEFAULT_VECTOR_SCALE = 2; // 10^6 for precision
+const DEFAULT_VECTOR_SCALE = 8; // 10^6 for precision
 
 interface ModelInferenceTabProps {
   model: ModelObject;

@@ -36,7 +36,7 @@ def format_input_value(value: float) -> str:
     Returns:
         String representation with 8 decimal places (e.g., "0.00000000")
     """
-    return f"{float(value):.2f}"
+    return f"{float(value):.8f}"
 
 def restructure_mnist_data(data: pd.DataFrame) -> List[Dict]:
     """Restructure MNIST test data into a list of objects

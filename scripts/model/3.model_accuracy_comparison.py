@@ -11,7 +11,7 @@ import seaborn as sns
 # Constants
 IMG_SIZE = 14
 INPUT_DIM = IMG_SIZE * IMG_SIZE
-SCALE = 2
+SCALE = 8
 
 def fixed_to_float(sign, magnitude, scale):
     """Convert (sign, magnitude) back to float using the scale factor"""
@@ -76,7 +76,7 @@ class JSONModel:
         # Get layer dimensions and scale from the JSON data
         layer_dimensions = model_data['layerDimensions']
         layer_activation = model_data['activationNames']
-        scale = model_data.get('scale', 2)  # Default to 2 if not present
+        scale = model_data.get('scale', 8)  # Default to 2 if not present
         
         # Create all layers based on the dimensions in the JSON
         self.layers = []

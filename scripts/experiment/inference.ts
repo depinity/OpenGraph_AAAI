@@ -18,12 +18,12 @@ const SUI_CONTRACT = {
 };
 
 // Model parameters
-const MODEL_ID = "0x0031be609664c7a6fe150d7a68b0fb7f43b45cab56056bba19a49fc0d2764499";
+const MODEL_ID = "0x46963f910024795e08d09c85a7a0cf1171279753890dec047037041f84300a51";
 const LAYER_COUNT = 3;
 const LAYER_DIMENSIONS = [32, 16, 10]; // Example dimensions
-const BATCH_SIZE = 50; // Number of samples to process in each batch
+const BATCH_SIZE = 10000; // Number of samples to process in each batch
 
-const GAS_BUDGET = 3_000_000_000; // 1 SUI
+const GAS_BUDGET = 2_000_000_000; // 1 SUI
 
 interface PredictionResult {
   magnitudes: number[];
@@ -150,6 +150,7 @@ class ModelInference {
       }
 
       // Execute transaction
+      const startTime = performance.now();
       const result = await this.client.signAndExecuteTransactionBlock({
         signer: this.signer,
         transactionBlock: tx,
@@ -157,6 +158,8 @@ class ModelInference {
           showEvents: true,
         },
       });
+      const endTime = performance.now();
+      console.log(`Transaction execution time: ${(endTime - startTime).toFixed(2)}ms`);
 
       console.log("Transaction executed:", result.digest);
 

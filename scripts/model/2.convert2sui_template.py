@@ -106,7 +106,7 @@ def get_layer_type(layer):
     
     return layer_type_mapping.get(layer_class_name, layer_class_name)
 
-def convert_model_to_schema(model, scale = 2):
+def convert_model_to_schema(model, scale = 8):
     """Convert Keras model to Model schema format"""
     layerNames = []
     activationNames = []
@@ -256,7 +256,7 @@ os.makedirs(save_path, exist_ok=True)
 
 save_path_model = os.path.join(save_path,f"{NAME}.json" ) 
 
-SCALE = 2
+SCALE = 8
 model = load_model(path)
 model_schema = convert_model_to_schema(model)
 
