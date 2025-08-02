@@ -239,6 +239,10 @@ async function main() {
       if (sampleIndex !== -1) {
         testData[sampleIndex].onchain_predicted_label = predictedClass;
         testData[sampleIndex].selected = true;  // Mark as selected
+        
+        // Save updated data immediately after each transaction
+        fs.writeFileSync(testDataPath, JSON.stringify(testData, null, 2));
+        console.log(`Results saved to file after processing sample ${sample.index}`);
       }
 
       console.log("Prediction result:");
@@ -262,9 +266,8 @@ async function main() {
     const totalProcessed = testData.filter(sample => sample.selected).length;
     console.log(`\nOverall progress: ${totalProcessed}/${testData.length} samples processed`);
 
-    // Save updated data back to JSON file
-    fs.writeFileSync(testDataPath, JSON.stringify(testData, null, 2));
-    console.log(`\nUpdated results saved to: ${testDataPath}`);
+    // Results are already saved after each transaction
+    console.log(`\nAll batch results have been saved to: ${testDataPath}`);
 
   } catch (error) {
     console.error("Error in main:", error);
