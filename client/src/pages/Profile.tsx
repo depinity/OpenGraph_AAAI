@@ -11,7 +11,7 @@ import {
 import { Card } from "@/shared/ui/design-system/components/Card";
 import { useTheme } from "@/shared/ui/design-system";
 import { SidebarLayout } from "@/widgets/layout/AppLayout";
-import { User, Rocket, Gear, Circle, UploadSimple, Database, Lightning } from "phosphor-react";
+import { User, Rocket, Circle, UploadSimple, Database, Lightning } from "phosphor-react";
 import { useCurrentWallet } from "@mysten/dapp-kit";
 
 export function Profile() {
@@ -350,44 +350,6 @@ export function Profile() {
                     }}
                   >
                     Browse Datasets
-                  </Text>
-                </Flex>
-              </Box>
-
-              <Box
-                style={{
-                  background: theme.colors.background.secondary,
-                  border: `1px solid ${theme.colors.border.primary}`,
-                  borderRadius: theme.borders.radius.sm,
-                  cursor: "pointer",
-                  transition: "all 0.2s ease",
-                }}
-                onClick={() => (window.location.href = "/annotator")}
-                onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
-                  e.currentTarget.style.borderColor = theme.colors.border.brand;
-                  e.currentTarget.style.background = `${theme.colors.interactive.primary}08`;
-                }}
-                onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
-                  e.currentTarget.style.borderColor = theme.colors.border.primary;
-                  e.currentTarget.style.background = theme.colors.background.secondary;
-                }}
-              >
-                <Flex
-                  align="center"
-                  gap="3"
-                  style={{
-                    padding: `${theme.spacing.semantic.component.sm} ${theme.spacing.semantic.component.md}`,
-                  }}
-                >
-                  <Gear size={16} style={{ color: theme.colors.status.warning }} />
-                  <Text
-                    size="2"
-                    style={{
-                      color: theme.colors.text.primary,
-                      fontWeight: 500,
-                    }}
-                  >
-                    Data Annotator
                   </Text>
                 </Flex>
               </Box>

@@ -10,11 +10,6 @@ import { UploadDataset } from "@/pages/UploadDataset";
 import { Profile } from "@/pages/Profile";
 import { Datasets } from "@/pages/Datasets";
 import { DatasetDetail } from "@/pages/DatasetDetail";
-import { Annotator } from "@/pages/Annotator";
-import { Challenges } from "@/pages/Challenges";
-import { ChallengeDetail } from "@/pages/ChallengeDetail";
-import { AnnotationWorkspace } from "@/pages/AnnotationWorkspace";
-import { ValidationWorkspace } from "@/pages/ValidationWorkspace";
 
 export default function App() {
   return (
@@ -23,8 +18,6 @@ export default function App() {
       <Routes>
         {/* Public routes - no wallet required */}
         <Route path="/" element={<Home />} />
-        <Route path="/challenges" element={<Challenges />} />
-        <Route path="/challenges/:id" element={<ChallengeDetail />} />
 
         {/* Protected routes - wallet required */}
         <Route
@@ -72,30 +65,6 @@ export default function App() {
           element={
             <ProtectedRoute>
               <DatasetDetail />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/challenges/:challengeId/annotate"
-          element={
-            <ProtectedRoute>
-              <AnnotationWorkspace />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/challenges/:challengeId/validate"
-          element={
-            <ProtectedRoute>
-              <ValidationWorkspace />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/annotator"
-          element={
-            <ProtectedRoute>
-              <Annotator />
             </ProtectedRoute>
           }
         />

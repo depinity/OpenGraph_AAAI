@@ -5,7 +5,6 @@ import { AuthState } from "../types/auth";
 
 export const useAuth = (): AuthState => {
   const { isConnected, currentWallet } = useCurrentWallet();
-  const location = useLocation();
 
   const isWalletConnected = isConnected && !!currentWallet?.accounts[0]?.address;
   const walletAddress = currentWallet?.accounts[0]?.address;

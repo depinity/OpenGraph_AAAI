@@ -1,7 +1,6 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
 import { useRoutePermission } from "../hooks/useAuth";
-import { Box, Flex, Text, Button } from "@/shared/ui/design-system/components";
+import { Box, Text, Button } from "@/shared/ui/design-system/components";
 import { useTheme } from "@/shared/ui/design-system";
 import { Wallet, ArrowRight, Sparkle } from "phosphor-react";
 

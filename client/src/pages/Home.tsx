@@ -677,11 +677,6 @@ export function Home() {
                 icon: "layers",
                 text: "Browse Datasets",
               },
-              {
-                href: "/annotator",
-                icon: "pencil",
-                text: "Data Annotator",
-              },
             ].map((action, index) => (
               <Link key={index} to={action.href} style={{ textDecoration: "none" }}>
                 <Box

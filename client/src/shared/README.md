@@ -15,8 +15,6 @@ OpenGraph 클라이언트는 페이지별 권한 제어 시스템을 통해 사�
 
 #### Public Pages (지갑 연결 불필요)
 - `/` - 홈페이지
-- `/challenges` - 챌린지 목록
-- `/challenges/:id` - 챌린지 상세
 
 #### Wallet Required Pages (지갑 연결 필요)
 - `/models` - 모델 목록
@@ -25,9 +23,6 @@ OpenGraph 클라이언트는 페이지별 권한 제어 시스템을 통해 사�
 - `/datasets` - 데이터셋 목록
 - `/datasets/upload` - 데이터셋 업로드
 - `/datasets/:id` - 데이터셋 상세
-- `/challenges/:challengeId/annotate` - 어노테이션 워크스페이스
-- `/challenges/:challengeId/validate` - 검증 워크스페이스
-- `/annotator` - 어노테이터
 - `/profile` - 프로필
 
 ## 레이아웃 시스템
