@@ -517,25 +517,25 @@ export function Home() {
               </Flex>
 
               <Flex align="center" gap="3">
-                <Box
-                  style={{
-                    width: "40px",
-                    height: "40px",
-                    background: `${theme.colors.interactive.accent}15`,
-                    borderRadius: "12px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <CubeIcon
-                    width="16"
-                    height="16"
-                    style={{ color: theme.colors.interactive.accent }}
-                  />
-                </Box>
-                <Box>
-                                     <Text
+                                 <Box
+                   style={{
+                     width: "40px",
+                     height: "40px",
+                     background: `${theme.colors.interactive.accent}15`,
+                     borderRadius: "12px",
+                     display: "flex",
+                     alignItems: "center",
+                     justifyContent: "center",
+                   }}
+                 >
+                   <CodeIcon
+                     width="16"
+                     height="16"
+                     style={{ color: theme.colors.interactive.accent }}
+                   />
+                 </Box>
+                 <Box>
+                   <Text
                      size="2"
                      style={{
                        fontWeight: 600,
@@ -543,7 +543,7 @@ export function Home() {
                        marginBottom: "4px",
                      }}
                    >
-                     Deterministic Inference
+                     Gas-Optimized Execution
                    </Text>
                    <Text
                      size="1"
@@ -551,9 +551,9 @@ export function Home() {
                        color: theme.colors.text.secondary,
                      }}
                    >
-                     Reproducible forward pass with consensus validation
+                     Efficient layer-by-layer computation for cost-effective inference
                    </Text>
-                </Box>
+                 </Box>
               </Flex>
             </Flex>
           </Box>
@@ -585,6 +585,16 @@ export function Home() {
                 }}
               >
                 Sui Network
+                <br />
+                <br />
+                {/* <span style={{ 
+                    background: `linear-gradient(135deg, ${theme.colors.interactive.accent}, ${theme.colors.status.success})`,
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}>
+                    Deep Neural Network Inference
+                  </span> */}
               </Text>
                              <Text
                  size="1"
@@ -593,11 +603,10 @@ export function Home() {
                    lineHeight: "1.4",
                  }}
                >
-                 Onchain DNN execution with immutable layer computations
                </Text>
             </Box>
 
-            <Box
+                        <Box
               style={{
                 background: `linear-gradient(135deg, ${theme.colors.interactive.accent}10, ${theme.colors.interactive.accent}05)`,
                 borderRadius: "20px",
@@ -606,7 +615,7 @@ export function Home() {
                 textAlign: "center",
               }}
             >
-              <LayersIcon
+              <GearIcon
                 width="32"
                 height="32"
                 style={{
@@ -622,17 +631,19 @@ export function Home() {
                   marginBottom: "8px",
                 }}
               >
-                Walrus Storage
+                Scalable DNN Inference
+                <br />
+                <br />
               </Text>
-                             <Text
-                 size="1"
-                 style={{
-                   color: theme.colors.text.secondary,
-                   lineHeight: "1.4",
-                 }}
-               >
-                 Decentralized storage for DNN training datasets and weights
-               </Text>
+              <Text
+                size="1"
+                style={{
+                  color: theme.colors.text.secondary,
+                  lineHeight: "1.4",
+                }}
+              >
+                
+              </Text>
             </Box>
           </Grid>
         </Grid>
@@ -699,11 +710,11 @@ export function Home() {
                  title: "Immutable Inference",
                  description: "Guaranteed deterministic results with blockchain consensus"
                },
-               {
-                 icon: <Share1Icon width="20" height="20" />,
-                 title: "Open Neural Networks",
-                 description: "Shared weights, biases, and architectures for transparency"
-               },
+                                {
+                   icon: <Share1Icon width="20" height="20" />,
+                   title: "Verifiable Models",
+                   description: "Transparent weights, biases, and layer architectures onchain"
+                 },
                {
                  icon: <CodeIcon width="20" height="20" />,
                  title: "DNN-First Design",
