@@ -5,7 +5,6 @@
 module tensorflowsui::model {
     use tensorflowsui::graph::{Self, Graph};
     use tensorflowsui::layer;
-    use tensorflowsui::dataset;
     use tensorflowsui::math;
     use std::string::{String};
     use tensorflowsui::tensor;
@@ -518,31 +517,6 @@ module tensorflowsui::model {
         };
         
         total
-    }
-
-    public fun add_test_dataset(model: &mut Model, test_dataset: &dataset::Dataset) {
-        if (option::is_none(&model.test_dataset_ids)) {
-            model.test_dataset_ids = option::some(vector::empty<ID>());
-        };
-        vector::push_back(option::borrow_mut(&mut model.test_dataset_ids), object::id(test_dataset));
-    }
-
-    public fun remove_test_dataset(model: &mut Model, test_dataset_id: ID): bool {
-        if (option::is_none(&model.test_dataset_ids)) {
-            return false
-        };
-        
-        let mut i = 0;
-        let len = vector::length(option::borrow(&model.test_dataset_ids));
-        while (i < len) {
-            let current_id = vector::borrow(option::borrow(&model.test_dataset_ids), i);
-            if (*current_id == test_dataset_id) {
-                vector::remove(option::borrow_mut(&mut model.test_dataset_ids), i);
-                return true
-            };
-            i = i + 1;
-        };
-        false
     }
 
     public fun get_training_dataset_id(model: &Model): Option<ID> {
