@@ -415,21 +415,21 @@ export function Home() {
             </Text>
           </Box>
 
-          <Box
+          {/* <Box
             style={{
               padding: theme.spacing.base[3],
               background: theme.colors.background.card,
               borderRadius: theme.borders.radius.md,
               border: `1px solid ${theme.colors.border.primary}`,
               textAlign: "center",
-            }}
-          >
+            }} */}
+          {/* > */}
             {/* <GitHubLogoIcon
               width="20"
               height="20"
               style={{ color: theme.colors.text.secondary, margin: "0 auto 8px" }}
             /> */}
-            <Text
+            {/* <Text
               size="2"
               style={{
                 fontWeight: theme.typography.label.fontWeight,
@@ -448,8 +448,8 @@ export function Home() {
               }}
             >
               By removing central control, on-chain DL ensures global, censorship-resistant access to AI services with high availability.
-            </Text>
-          </Box>
+            </Text> */}
+          {/* </Box> */}
         </Grid>
       </Box>
     </Box>

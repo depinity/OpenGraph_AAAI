@@ -67,13 +67,6 @@ export function Header() {
             >
               Models
             </NavLink>
-            <NavLink
-              to="/datasets"
-              current={location.pathname === "/datasets"}
-              disabled={!isConnected && requiresWallet("/datasets")}
-            >
-              Datasets
-            </NavLink>
           </Flex>
         </Flex>
 

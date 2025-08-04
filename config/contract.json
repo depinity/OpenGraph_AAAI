@@ -1,0 +1,10 @@
+{
+  "network": "devnet",
+  "contract": {
+    "package_id": "0x0903269e3d87ed9ba2840ac31c1845a5ce3a688893e5847ddb3346adc8ad3501",
+    "module_name": "model"
+  },
+  "account": {
+    "private_key": "0xe2ffb4e2f825285b9745256ffb9e3d7a1504ec76deca0e936a9cc3f7467dff35"
+  }
+}
