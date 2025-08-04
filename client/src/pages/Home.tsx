@@ -47,7 +47,7 @@ export function Home() {
               lineHeight: "1.2",
             }}
           >
-            Verifiable ML Infrastructure
+            Trustworthy Deep Learning Inference Framework using Blockchain
           </Heading>
 
           <Text
@@ -59,8 +59,7 @@ export function Home() {
               lineHeight: "1.4",
             }}
           >
-            Onchain machine learning with complete transparency. Build, verify, and deploy ML models
-            on Sui & Walrus.
+            Scalable On-Chain DNN Inference Algorithm
           </Text>
 
           <Flex gap="3" mt="3">
@@ -109,73 +108,6 @@ export function Home() {
             </Link>
           </Flex>
         </Flex>
-
-        {/* Compact Stats Row */}
-        <Flex justify="center" gap="8" py="3">
-          <Flex direction="column" align="center" gap="1">
-            <Text
-              size="4"
-              style={{
-                fontWeight: theme.typography.h4.fontWeight,
-                color: theme.colors.text.primary,
-              }}
-            >
-              1,250+
-            </Text>
-            <Text
-              size="1"
-              style={{
-                color: theme.colors.text.secondary,
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-              }}
-            >
-              Models
-            </Text>
-          </Flex>
-          <Flex direction="column" align="center" gap="1">
-            <Text
-              size="4"
-              style={{
-                fontWeight: theme.typography.h4.fontWeight,
-                color: theme.colors.text.primary,
-              }}
-            >
-              340TB
-            </Text>
-            <Text
-              size="1"
-              style={{
-                color: theme.colors.text.secondary,
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-              }}
-            >
-              On-chain Data
-            </Text>
-          </Flex>
-          <Flex direction="column" align="center" gap="1">
-            <Text
-              size="4"
-              style={{
-                fontWeight: theme.typography.h4.fontWeight,
-                color: theme.colors.text.primary,
-              }}
-            >
-              99.9%
-            </Text>
-            <Text
-              size="1"
-              style={{
-                color: theme.colors.text.secondary,
-                textTransform: "uppercase",
-                letterSpacing: "0.05em",
-              }}
-            >
-              Verifiable
-            </Text>
-          </Flex>
-        </Flex>
       </Box>
 
       {/* Main Content Grid */}
@@ -192,20 +124,6 @@ export function Home() {
             >
               Featured Models
             </Heading>
-            <Link to="/models">
-              <Button
-                variant="tertiary"
-                size="sm"
-                style={{
-                  fontSize: theme.typography.caption.fontSize,
-                  color: theme.colors.text.secondary,
-                  background: "transparent",
-                  border: "none",
-                }}
-              >
-                View All →
-              </Button>
-            </Link>
           </Flex>
 
           <Grid columns={{ initial: "1", sm: "2", lg: "3" }} gap="3">
@@ -331,75 +249,7 @@ export function Home() {
                   lineHeight: "1.4",
                 }}
               >
-                Object-native ML execution with immutable inference
-              </Text>
-            </Box>
-
-            <Box
-              style={{
-                padding: theme.spacing.base[3],
-                background: theme.colors.background.card,
-                borderRadius: theme.borders.radius.md,
-                border: `1px solid ${theme.colors.border.primary}`,
-                boxShadow: theme.shadows.semantic.card.low,
-              }}
-            >
-              <Flex align="center" gap="2" mb="2">
-                <LayersIcon
-                  width="16"
-                  height="16"
-                  style={{ color: theme.colors.interactive.accent }}
-                />
-                <Text
-                  size="2"
-                  style={{
-                    fontWeight: theme.typography.label.fontWeight,
-                    color: theme.colors.text.primary,
-                  }}
-                >
-                  Walrus Storage
-                </Text>
-              </Flex>
-              <Text
-                size="1"
-                style={{
-                  color: theme.colors.text.secondary,
-                  lineHeight: "1.4",
-                }}
-              >
-                Decentralized dataset storage with cryptographic proofs
-              </Text>
-            </Box>
-
-            <Box
-              style={{
-                padding: theme.spacing.base[3],
-                background: theme.colors.background.card,
-                borderRadius: theme.borders.radius.md,
-                border: `1px solid ${theme.colors.border.primary}`,
-                boxShadow: theme.shadows.semantic.card.low,
-              }}
-            >
-              <Flex align="center" gap="2" mb="2">
-                <RocketIcon width="16" height="16" style={{ color: theme.colors.status.success }} />
-                <Text
-                  size="2"
-                  style={{
-                    fontWeight: theme.typography.label.fontWeight,
-                    color: theme.colors.text.primary,
-                  }}
-                >
-                  RL Playground
-                </Text>
-              </Flex>
-              <Text
-                size="1"
-                style={{
-                  color: theme.colors.text.secondary,
-                  lineHeight: "1.4",
-                }}
-              >
-                Physics simulation for autonomous agents
+                Object-native DNN execution with immutable inference
               </Text>
             </Box>
           </Flex>
@@ -417,7 +267,7 @@ export function Home() {
             color: theme.colors.text.primary,
           }}
         >
-          Platform Capabilities
+          AI x Blockchain
         </Heading>
 
         <Grid columns={{ initial: "1", sm: "2", lg: "4" }} gap="3">
@@ -430,11 +280,11 @@ export function Home() {
               textAlign: "center",
             }}
           >
-            <RocketIcon
+            {/* <RocketIcon
               width="20"
               height="20"
               style={{ color: theme.colors.interactive.primary, margin: "0 auto 8px" }}
-            />
+            /> */}
             <Text
               size="2"
               style={{
@@ -444,7 +294,7 @@ export function Home() {
                 marginBottom: "4px",
               }}
             >
-              Model Verification
+              Transparency
             </Text>
             <Text
               size="1"
@@ -453,7 +303,7 @@ export function Home() {
                 lineHeight: "1.3",
               }}
             >
-              Cryptographic proofs for all inference operations
+              On-chain DL ensures transparency by immutably recording the entire inference process, allowing anyone to verify model fairness and trace decision origins.
             </Text>
           </Box>
 
@@ -466,11 +316,11 @@ export function Home() {
               textAlign: "center",
             }}
           >
-            <Share1Icon
+            {/* <Share1Icon
               width="20"
               height="20"
               style={{ color: theme.colors.interactive.accent, margin: "0 auto 8px" }}
-            />
+            /> */}
             <Text
               size="2"
               style={{
@@ -480,7 +330,7 @@ export function Home() {
                 marginBottom: "4px",
               }}
             >
-              Composable AI
+              Immutability
             </Text>
             <Text
               size="1"
@@ -489,7 +339,7 @@ export function Home() {
                 lineHeight: "1.3",
               }}
             >
-              Build upon existing models with object composition
+              Once deployed, on-chain DL models cannot be altered, preventing tampering and preserving integrity.
             </Text>
           </Box>
 
@@ -502,11 +352,11 @@ export function Home() {
               textAlign: "center",
             }}
           >
-            <CodeIcon
+            {/* <CodeIcon
               width="20"
               height="20"
               style={{ color: theme.colors.status.success, margin: "0 auto 8px" }}
-            />
+            /> */}
             <Text
               size="2"
               style={{
@@ -516,7 +366,7 @@ export function Home() {
                 marginBottom: "4px",
               }}
             >
-              Open Source
+              Accountability
             </Text>
             <Text
               size="1"
@@ -525,7 +375,7 @@ export function Home() {
                 lineHeight: "1.3",
               }}
             >
-              Full transparency with open infrastructure
+              Every action in on-chain DL is logged on the blockchain, enabling clear responsibility tracing in case of disputes.
             </Text>
           </Box>
 
@@ -538,11 +388,11 @@ export function Home() {
               textAlign: "center",
             }}
           >
-            <GitHubLogoIcon
+            {/* <GitHubLogoIcon
               width="20"
               height="20"
               style={{ color: theme.colors.text.secondary, margin: "0 auto 8px" }}
-            />
+            /> */}
             <Text
               size="2"
               style={{
@@ -552,7 +402,7 @@ export function Home() {
                 marginBottom: "4px",
               }}
             >
-              Physical AI
+              Reproducibility
             </Text>
             <Text
               size="1"
@@ -561,121 +411,47 @@ export function Home() {
                 lineHeight: "1.3",
               }}
             >
-              Real-world robotics and autonomous systems
+              On-chain DL guarantees identical results under the same conditions, ensuring technical, legal, and scientific reproducibility.
+            </Text>
+          </Box>
+
+          <Box
+            style={{
+              padding: theme.spacing.base[3],
+              background: theme.colors.background.card,
+              borderRadius: theme.borders.radius.md,
+              border: `1px solid ${theme.colors.border.primary}`,
+              textAlign: "center",
+            }}
+          >
+            {/* <GitHubLogoIcon
+              width="20"
+              height="20"
+              style={{ color: theme.colors.text.secondary, margin: "0 auto 8px" }}
+            /> */}
+            <Text
+              size="2"
+              style={{
+                fontWeight: theme.typography.label.fontWeight,
+                color: theme.colors.text.primary,
+                display: "block",
+                marginBottom: "4px",
+              }}
+            >
+              Decentralization
+            </Text>
+            <Text
+              size="1"
+              style={{
+                color: theme.colors.text.secondary,
+                lineHeight: "1.3",
+              }}
+            >
+              By removing central control, on-chain DL ensures global, censorship-resistant access to AI services with high availability.
             </Text>
           </Box>
         </Grid>
       </Box>
-
-      {/* Recent Activity & Quick Actions */}
-      <Grid columns={{ initial: "1", md: "2" }} gap="4" mb="4">
-        <Box>
-          <Heading
-            size="4"
-            mb="3"
-            style={{
-              fontWeight: theme.typography.h3.fontWeight,
-              color: theme.colors.text.primary,
-            }}
-          >
-            Recent Activity
-          </Heading>
-          <Box
-            style={{
-              padding: theme.spacing.base[3],
-              background: theme.colors.background.card,
-              borderRadius: theme.borders.radius.md,
-              border: `1px solid ${theme.colors.border.primary}`,
-            }}
-          >
-            <Flex direction="column" gap="3">
-              {[
-                { action: "Model uploaded", model: "GPT-2 Nano", time: "2 hours ago" },
-                { action: "Inference completed", model: "MNIST Classifier", time: "4 hours ago" },
-                { action: "Dataset verified", model: "Physics Sim Data", time: "6 hours ago" },
-              ].map((item, index) => (
-                <Flex key={index} justify="between" align="center">
-                  <Flex direction="column" gap="1">
-                    <Text size="2" style={{ color: theme.colors.text.primary }}>
-                      {item.action}
-                    </Text>
-                    <Text size="1" style={{ color: theme.colors.text.secondary }}>
-                      {item.model}
-                    </Text>
-                  </Flex>
-                  <Text size="1" style={{ color: theme.colors.text.tertiary }}>
-                    {item.time}
-                  </Text>
-                </Flex>
-              ))}
-            </Flex>
-          </Box>
-        </Box>
-
-        <Box>
-          <Heading
-            size="4"
-            mb="3"
-            style={{
-              fontWeight: theme.typography.h3.fontWeight,
-              color: theme.colors.text.primary,
-            }}
-          >
-            Quick Actions
-          </Heading>
-          <Flex direction="column" gap="3">
-            {[
-              {
-                href: "/models/upload",
-                icon: "rocket",
-                text: "Upload New Model",
-              },
-              {
-                href: "/datasets",
-                icon: "layers",
-                text: "Browse Datasets",
-              },
-            ].map((action, index) => (
-              <Link key={index} to={action.href} style={{ textDecoration: "none" }}>
-                <Box
-                  style={{
-                    width: "100%",
-                    padding: `${theme.spacing.base[2]} ${theme.spacing.base[3]}`,
-                    height: "44px",
-                    background: theme.colors.background.card,
-                    color: theme.colors.text.primary,
-                    border: `1px solid ${theme.colors.border.primary}`,
-                    borderRadius: theme.borders.radius.sm,
-                    transition: "all 0.2s ease",
-                    fontSize: theme.typography.bodySmall.fontSize,
-                    fontWeight: 500,
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                  onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
-                    e.currentTarget.style.borderColor = theme.colors.interactive.primary;
-                    e.currentTarget.style.background = `${theme.colors.interactive.primary}08`;
-                  }}
-                  onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
-                    e.currentTarget.style.borderColor = theme.colors.border.primary;
-                    e.currentTarget.style.background = theme.colors.background.card;
-                  }}
-                >
-                  <Flex align="center" gap="2">
-                    <Box style={{ color: theme.colors.interactive.primary }}>
-                      {action.icon === "rocket" && <RocketIcon />}
-                      {action.icon === "layers" && <LayersIcon />}
-                      {action.icon === "pencil" && <Pencil1Icon />}
-                    </Box>
-                    {action.text}
-                  </Flex>
-                </Box>
-              </Link>
-            ))}
-          </Flex>
-        </Box>
-      </Grid>
     </Box>
   );
 }
@@ -683,63 +459,13 @@ export function Home() {
 // Featured models data (matching ModelData interface)
 const featuredModels: ModelData[] = [
   {
-    id: "1",
-    name: "MNIST Classifier",
-    description: "Handwritten digit recognition with 99.2% accuracy",
-    creator: "0x1234...5678",
-    downloads: 1250,
-    likes: 89,
-    task: "Computer Vision",
-    frameworks: ["TensorFlow", "SUI"],
-  },
-  {
-    id: "2",
-    name: "Sentiment Analyzer",
-    description: "Advanced NLP model for sentiment classification",
-    creator: "0xabcd...efgh",
-    downloads: 892,
-    likes: 67,
-    task: "NLP",
-    frameworks: ["PyTorch", "SUI"],
-  },
-  {
-    id: "3",
-    name: "Physics Simulator",
-    description: "RL model for autonomous navigation",
-    creator: "0x9876...1234",
-    downloads: 456,
-    likes: 123,
-    task: "Reinforcement Learning",
-    frameworks: ["Custom", "SUI"],
-  },
-  {
-    id: "4",
-    name: "GPT-2 Nano",
-    description: "Lightweight text generation model",
-    creator: "0x5678...9abc",
-    downloads: 234,
-    likes: 45,
-    task: "Text Generation",
-    frameworks: ["PyTorch", "SUI"],
-  },
-  {
-    id: "5",
-    name: "Vision Transformer",
-    description: "Image classification with transformer architecture",
-    creator: "0xdef0...1234",
-    downloads: 678,
-    likes: 91,
-    task: "Computer Vision",
-    frameworks: ["JAX", "SUI"],
-  },
-  {
-    id: "6",
-    name: "Audio Classifier",
-    description: "Real-time audio event detection",
-    creator: "0x2468...ace0",
-    downloads: 345,
-    likes: 56,
-    task: "Audio Processing",
-    frameworks: ["TensorFlow", "SUI"],
-  },
-];
+      id: "1",
+      name: "MNIST Classifier",
+      description: "Onchain DNN models",
+      creator: "0x1234...5678",
+      downloads: 0,
+      likes: 0,
+      task: "Computer Vision",
+      frameworks: ["TensorFlow", "SUI"],
+    }
+]
