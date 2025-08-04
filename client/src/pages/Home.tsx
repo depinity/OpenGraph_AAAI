@@ -107,48 +107,6 @@ export function Home() {
                 </Button>
               </Box>
             </Link>
-            <Link to="/upload">
-              <Box
-                style={{
-                  display: "inline-block",
-                  transition: "all 0.2s ease",
-                }}
-                onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
-                  const button = e.currentTarget.querySelector("button");
-                  if (button) {
-                    button.style.borderColor = theme.colors.interactive.primary;
-                    button.style.background = `${theme.colors.interactive.primary}08`;
-                    button.style.transform = "translateY(-1px)";
-                  }
-                }}
-                onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
-                  const button = e.currentTarget.querySelector("button");
-                  if (button) {
-                    button.style.borderColor = theme.colors.border.primary;
-                    button.style.background = theme.colors.background.card;
-                    button.style.transform = "translateY(0)";
-                  }
-                }}
-              >
-                <Button
-                  variant="secondary"
-                  size="md"
-                  style={{
-                    fontSize: theme.typography.bodySmall.fontSize,
-                    padding: `${theme.spacing.base[2]} ${theme.spacing.base[4]}`,
-                    height: "40px",
-                    background: theme.colors.background.card,
-                    color: theme.colors.text.primary,
-                    border: `1px solid ${theme.colors.border.primary}`,
-                    borderRadius: theme.borders.radius.sm,
-                    transition: "all 0.2s ease",
-                    fontWeight: 500,
-                  }}
-                >
-                  Upload Model
-                </Button>
-              </Box>
-            </Link>
           </Flex>
         </Flex>
 

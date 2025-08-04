@@ -218,14 +218,6 @@ export function Header() {
             >
               Datasets
             </MobileNavLink>
-            <MobileNavLink
-              to="/models/upload"
-              current={location.pathname === "/models/upload"}
-              onClick={() => setIsMobileMenuOpen(false)}
-              disabled={!isConnected && requiresWallet("/models/upload")}
-            >
-              Upload Model
-            </MobileNavLink>
           </Flex>
         </Box>
       )}
